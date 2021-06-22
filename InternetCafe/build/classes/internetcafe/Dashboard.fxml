@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutX="150.0" layoutY="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="14.0" layoutY="25.0" prefHeight="602.0" prefWidth="125.0" style="-fx-background-color: #0a3d62;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="34.0" layoutY="65.0" size="50" />
+            <Label layoutX="26.0" layoutY="88.0" text="A - J Cafe" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <TabPane layoutX="125.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+        <tabs>
+          <Tab text="Dashboard">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="48.0" layoutY="8.0" text="Dashboard" textFill="#0a3d62">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="TACHOMETER" layoutX="21.0" layoutY="31.0" size="20" />
+                        <Pane layoutX="21.0" layoutY="40.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="WIFI" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="224.0" layoutY="40.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="WIFI" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="431.0" layoutY="40.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="WIFI" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Label layoutX="48.0" layoutY="104.0" text="Available Computers" textFill="#0a3d62">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="TV" layoutX="21.0" layoutY="127.0" size="20" />
+                        <Separator layoutX="21.0" layoutY="103.0" prefHeight="5.0" prefWidth="603.0" />
+                        <GridPane hgap="10.0" layoutX="21.0" layoutY="143.0" prefHeight="421.0" prefWidth="618.0" vgap="10.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="143.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="1" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label layoutX="19.0" text="2" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="167.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label layoutX="19.0" text="3" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="3">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="4" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="5" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="6" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="167.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="7" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="8" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="9" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="298.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="10" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="167.0" layoutY="298.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="116.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@img/desk.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                                    <Label layoutX="19.0" text="11" textFill="#e81212">
+                                       <font>
+                                          <Font name="Arial Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="28.0" text="00 : 00" textFill="#60a3bc">
+                                       <font>
+                                          <Font name="Arial Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <FontAwesomeIconView fill="#48dbfb" glyphName="PLUS_CIRCLE" layoutX="55.0" layoutY="74.0" size="60" />
+                                    <Label layoutX="33.0" layoutY="86.0" text="Add Computer" textFill="#0a3d62">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </GridPane>
+                        <Label layoutX="730.0" layoutY="6.0" text="Computer details" textFill="#0a3d62" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="6.0">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="TV" layoutX="698.0" layoutY="30.0" size="20" AnchorPane.rightAnchor="245.1428565979004" AnchorPane.topAnchor="12.85714340209961" />
+                        <Pane layoutX="698.0" layoutY="43.0" prefHeight="325.0" prefWidth="257.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 10;" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="43.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/desk.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="51.0" layoutY="170.0" text="Computer Name Here!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="14.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                              <Button layoutX="114.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: red;" text="Stop" textFill="WHITE" />
+                              <Button layoutX="181.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #48dbfb;" text="Pause" textFill="WHITE" />
+                              <Button layoutX="17.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #60a3bc;" text="Unlock" textFill="WHITE" />
+                              <Button layoutX="106.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: red;" text="Block" textFill="WHITE" />
+                              <Button layoutX="172.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #60a3bc;" text="On / Off" textFill="WHITE" />
+                              <Button layoutX="18.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: #60a3bc;" text="Session Abort" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <Separator layoutX="692.0" layoutY="380.0" prefHeight="4.0" prefWidth="259.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="380.0" />
+                        <Label layoutX="729.0" layoutY="384.0" text="Manage All" textFill="#0a3d62" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="384.0">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="COG" layoutX="698.0" layoutY="408.0" size="20" AnchorPane.rightAnchor="245.1428565979004" AnchorPane.topAnchor="390.8571434020996" />
+                        <Pane layoutX="698.0" layoutY="416.0" prefHeight="146.0" prefWidth="256.0" style="-fx-background-color: #60a3bc; -fx-background-radius: 10;" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="416.0">
+                           <children>
+                              <Button layoutX="10.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #48dbfb;" text="Start All" textFill="WHITE" />
+                              <Button layoutX="139.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: red;" text="Stop All" textFill="WHITE" />
+                              <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: red;" text="Block All" textFill="WHITE" />
+                              <Button layoutX="10.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: #3c6382;" text="Computer Settings" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Computer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
