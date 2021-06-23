@@ -10,6 +10,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,7 +22,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="internetcafe.DashboardController">
    <children>
       <MenuBar layoutX="150.0" layoutY="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -49,7 +52,7 @@
                </font>
             </Label>
          </children></Pane>
-      <TabPane layoutX="125.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <TabPane fx:id="mainTab" layoutX="125.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
         <tabs>
           <Tab text="Dashboard">
             <content>
@@ -69,6 +72,9 @@
                                  </children>
                               </Pane>
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Pane>
                         <Pane layoutX="224.0" layoutY="40.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
                            <children>
@@ -78,6 +84,9 @@
                                  </children>
                               </Pane>
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Pane>
                         <Pane layoutX="431.0" layoutY="40.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
                            <children>
@@ -87,6 +96,9 @@
                                  </children>
                               </Pane>
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Pane>
                         <Label layoutX="48.0" layoutY="104.0" text="Available Computers" textFill="#0a3d62">
                            <font>
@@ -371,7 +383,7 @@
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <children>
-                                    <FontAwesomeIconView fill="#48dbfb" glyphName="PLUS_CIRCLE" layoutX="55.0" layoutY="74.0" size="60" />
+                                    <FontAwesomeIconView fx:id="addComp" fill="#48dbfb" glyphName="PLUS_CIRCLE" layoutX="55.0" layoutY="74.0" onMouseClicked="#addCompPage" size="60" />
                                     <Label layoutX="33.0" layoutY="86.0" text="Add Computer" textFill="#0a3d62">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
@@ -407,6 +419,9 @@
                               <Button layoutX="172.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #60a3bc;" text="On / Off" textFill="WHITE" />
                               <Button layoutX="18.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: #60a3bc;" text="Session Abort" textFill="WHITE" />
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Pane>
                         <Separator layoutX="692.0" layoutY="380.0" prefHeight="4.0" prefWidth="259.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="380.0" />
                         <Label layoutX="729.0" layoutY="384.0" text="Manage All" textFill="#0a3d62" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="384.0">
@@ -422,6 +437,9 @@
                               <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: red;" text="Block All" textFill="WHITE" />
                               <Button layoutX="10.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: #3c6382;" text="Computer Settings" textFill="WHITE" />
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Pane>
                      </children>
                   </AnchorPane>
@@ -429,9 +447,263 @@
           </Tab>
           <Tab text="Computer">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="55.0" layoutY="10.0" text="Registered Computers" textFill="#0a3d62">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="TV" layoutX="26.0" layoutY="35.0" size="20" />
+                        <Pane layoutX="32.0" layoutY="54.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane layoutX="235.0" layoutY="54.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane layoutX="441.0" layoutY="54.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="166.0" prefHeight="374.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+                           <children>
+                              <ImageView fitHeight="193.0" fitWidth="288.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/desk.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="15.0" layoutY="-18.0" text="1" textFill="#e81212">
+                                 <font>
+                                    <Font name="Arial Bold" size="68.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="85.0" layoutY="51.0" prefWidth="179.0" text="00 : 00" textFill="#60a3bc">
+                                 <font>
+                                    <Font name="Arial Bold" size="45.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="40.0" layoutY="200.0" text="Computer name Here" textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="242.0" text="IP Address:" textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="187.0" layoutY="242.0" text="Mac Address:" textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="285.0" text="Computer Type:  " textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="203.0" layoutY="285.0" text="Port No:" textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="12.0" layoutY="325.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="263.0" style="-fx-background-color: #48dbfb;" text="Start Session" textFill="WHITE" />
+                              <Label layoutX="14.0" layoutY="264.0" text="IP Address:" textFill="GREY">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="187.0" layoutY="264.0" text="IP Address:" textFill="GREY">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="305.0" text="IP Address:" textFill="GREY">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <TableView layoutX="408.0" layoutY="134.0" prefHeight="330.0" prefWidth="524.0" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="408.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="134.0">
+                          <columns>
+                            <TableColumn prefWidth="66.0" text="No" />
+                            <TableColumn prefWidth="111.0" text="Computer Name" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="55.0" layoutY="132.0" text="Computer details" textFill="#0a3d62">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="TV" layoutX="26.0" layoutY="155.0" size="20" />
+                        <Separator layoutX="32.0" layoutY="123.0" prefHeight="0.0" prefWidth="430.0" />
+                        <Button layoutX="795.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#addCompPage" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #60a3bc;" text="Add New Computer" textFill="WHITE" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="59.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="496.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#addCompPage" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #60a3bc;" text="Delete Computer" textFill="WHITE" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="321.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="774.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#addCompPage" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #60a3bc;" text="Update Computer" textFill="WHITE" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="43.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
+                           </graphic>
+                        </Button>
+                     </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="AddComputer">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="57.0" layoutY="11.0" text="Add Computer" textFill="#0a3d62">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#0a3d62" glyphName="PLUS_CIRCLE" layoutX="27.0" layoutY="34.0" size="20" />
+                        <Pane layoutX="36.0" layoutY="52.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane layoutX="242.0" layoutY="52.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #60a3bc;">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="57.0" style="-fx-background-color: #3c6382;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TV" layoutX="16.0" layoutY="32.0" size="20" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <ImageView fitHeight="423.0" fitWidth="433.0" layoutX="34.0" layoutY="137.0" pickOnBounds="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="499.0" AnchorPane.topAnchor="137.0">
+                           <image>
+                              <Image url="@img/desk.png" />
+                           </image>
+                        </ImageView>
+                        <Pane layoutX="544.0" layoutY="52.0" prefHeight="457.0" prefWidth="370.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #0a3d62;" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="52.0">
+                           <children>
+                              <Label layoutX="118.0" layoutY="8.0" text="Register Computer" textFill="#0a3d62">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIconView fill="#0a3d62" glyphName="PLUS_CIRCLE" layoutX="85.0" layoutY="31.0" size="20" />
+                              <TextField layoutX="28.0" layoutY="68.0" prefHeight="38.0" prefWidth="309.0" promptText="Computer Name" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="32.0" layoutY="133.0" prefHeight="38.0" prefWidth="146.0" promptText="Computer No" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="189.0" layoutY="133.0" prefHeight="38.0" prefWidth="149.0" promptText="IP Address" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="28.0" layoutY="202.0" prefHeight="38.0" prefWidth="309.0" promptText="Mac Address" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="36.0" layoutY="267.0" prefHeight="38.0" prefWidth="146.0" promptText="Computer Type" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="193.0" layoutY="267.0" prefHeight="38.0" prefWidth="149.0" promptText="Port No" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <TextField layoutX="35.0" layoutY="321.0" prefHeight="38.0" prefWidth="309.0" promptText="Network Type" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TextField>
+                              <Button layoutX="35.0" layoutY="390.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #60a3bc; -fx-background-radius: 20;" text="Register Computer" textFill="WHITE">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Users">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
